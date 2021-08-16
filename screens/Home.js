@@ -1,10 +1,35 @@
 import React, { useState } from "react";
-
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { BottomNavigation } from "react-native-paper";
 
 import HomePage from "./HomePage";
+import Bodyworkout from "./workouts/Fullbody";
+import Absworkout from "./workouts/Absworkout";
+import Backworkout from "./workouts/Backworkout";
+import Armworkout from "./workouts/Armworkout";
+import Legworkout from "./workouts/Legworkout";
+
 import DietPlan from "./DietPage";
 import FitProps from "./FitProps";
+
+const StackNav = createNativeStackNavigator();
+
+const WorkoutNav = () => {
+  return (
+    <StackNav.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <StackNav.Screen name="Main" component={HomePage} />
+      <StackNav.Screen name="Body" component={Bodyworkout} />
+      <StackNav.Screen name="Abs" component={Absworkout} />
+      <StackNav.Screen name="Back" component={Backworkout} />
+      <StackNav.Screen name="Arm" component={Armworkout} />
+      <StackNav.Screen name="Leg" component={Legworkout} />
+    </StackNav.Navigator>
+  );
+};
 
 export default Home = () => {
   const [index, setIndex] = useState(0);
@@ -15,7 +40,7 @@ export default Home = () => {
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    work: HomePage,
+    work: WorkoutNav,
     diet: DietPlan,
     props: FitProps,
   });

@@ -41,9 +41,12 @@ const Banner = ({ value, cover }) => {
   );
 };
 
-const MiniAvater = ({ value, img }) => {
+const MiniAvater = ({ value, img, navig }) => {
   return (
-    <TouchableOpacity style={styles.avater}>
+    <TouchableOpacity
+      style={styles.avater}
+      onPress={() => navig.navigate(value)}
+    >
       <Avatar
         rounded
         size="medium"
@@ -56,7 +59,7 @@ const MiniAvater = ({ value, img }) => {
   );
 };
 
-export default HomePage = () => {
+export default HomePage = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.textheading}>Daily Fitness</Text>
@@ -64,22 +67,27 @@ export default HomePage = () => {
         <MiniAvater
           value="Body"
           img="https://images.unsplash.com/photo-1579758682665-53a1a614eea6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjZ8fGxlZyUyMHdvcmtvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+          navig={navigation}
         />
         <MiniAvater
           value="Abs"
           img="https://images.unsplash.com/photo-1577221084712-45b0445d2b00?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z3ltfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+          navig={navigation}
         />
         <MiniAvater
           value="Back"
           img="https://images.unsplash.com/photo-1567598508481-65985588e295?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTIzfHxneW18ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+          navig={navigation}
         />
         <MiniAvater
           value="Arm"
           img="https://images.unsplash.com/photo-1543975200-8e313fb04fc7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGd5bXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+          navig={navigation}
         />
         <MiniAvater
           value="Leg"
           img="https://images.unsplash.com/photo-1597892657493-6847b9640bac?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bGVnfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+          navig={navigation}
         />
       </View>
 
