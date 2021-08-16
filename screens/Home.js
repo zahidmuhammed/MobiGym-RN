@@ -36,7 +36,11 @@ export default Home = () => {
   const [routes] = useState([
     { key: "work", title: "Workout", icon: "bullseye-arrow" },
     { key: "diet", title: "Diet Plan", icon: "bowl-mix" },
-    { key: "props", title: "Fitness Props", icon: "dumbbell" },
+    {
+      key: "props",
+      title: "Fitness Props",
+      icon: "dumbbell",
+    },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
@@ -50,6 +54,7 @@ export default Home = () => {
       onIndexChange={setIndex}
       renderScene={renderScene}
       barStyle={{ backgroundColor: "#20233a" }}
+      sceneAnimationEnabled
     />
   );
 };
