@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   SafeAreaView,
   Text,
@@ -10,87 +9,40 @@ import {
 } from "react-native";
 
 import Menu from "../Data/DietMenu";
+
 export default DietPlan = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.heading}>Diet Plan</Text>
       <ScrollView>
-        <View
-          style={{
-            backgroundColor: "#7b82b6",
-            paddingVertical: 15,
-            paddingLeft: 20,
-          }}
-        >
-          <Text style={{ color: "#fff", fontSize: 17, marginBottom: 10 }}>
-            &#x1F375; Breakfast
-          </Text>
+        <View style={styles.oddplan}>
+          <Text style={styles.planheading}>&#x1F375; Breakfast</Text>
           {Menu.Breakfast.map((item, index) => (
             <Text key={index} style={{ color: "#ececec", margin: 3 }}>
               &#x2724; {item.item}
             </Text>
           ))}
         </View>
-        <View
-          style={{
-            paddingVertical: 15,
-            paddingLeft: 20,
-          }}
-        >
-          <Text
-            style={{
-              color: "#fff",
-              fontSize: 17,
-              marginBottom: 10,
-            }}
-          >
-            &#x1F36A; Snack
-          </Text>
+        <View style={styles.evenplan}>
+          <Text style={styles.planheading}>&#x1F36A; Snack</Text>
           {Menu.Snack.map((item, index) => (
-            <Text key={index} style={{ color: "#ececec", margin: 3 }}>
+            <Text key={index} style={styles.content}>
               &#x2724; {item.item}
             </Text>
           ))}
         </View>
-        <View
-          style={{
-            backgroundColor: "#7b82b6",
-            paddingVertical: 15,
-            paddingLeft: 20,
-          }}
-        >
-          <Text
-            style={{
-              color: "#fff",
-              fontSize: 17,
-              marginBottom: 10,
-            }}
-          >
-            &#x1F957; Lunch
-          </Text>
+        <View style={styles.oddplan}>
+          <Text style={styles.planheading}>&#x1F957; Lunch</Text>
           {Menu.Lunch.map((item, index) => (
-            <Text key={index} style={{ color: "#ececec", margin: 3 }}>
+            <Text key={index} style={styles.content}>
               &#x2724; {item.item}
             </Text>
           ))}
         </View>
-        <View
-          style={{
-            paddingVertical: 15,
-            paddingLeft: 20,
-          }}
-        >
-          <Text
-            style={{
-              color: "#fff",
-              fontSize: 17,
-              marginBottom: 10,
-            }}
-          >
-            &#x1F958; Dinner
-          </Text>
+        <View style={styles.evenplan}>
+          <Text style={styles.planheading}>&#x1F958; Dinner</Text>
           {Menu.Dinner.map((item, index) => (
-            <Text key={index} style={{ color: "#ececec", margin: 3 }}>
+            <Text key={index} style={styles.content}>
               &#x2724; {item.item}
             </Text>
           ))}
@@ -112,4 +64,8 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     color: "#ececec",
   },
+  oddplan: { backgroundColor: "#7b82b6", paddingVertical: 15, paddingLeft: 20 },
+  evenplan: { paddingVertical: 15, paddingLeft: 20 },
+  planheading: { color: "#fff", fontSize: 17, marginBottom: 10 },
+  content: { color: "#ececec", margin: 3 },
 });

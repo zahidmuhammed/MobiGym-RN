@@ -13,15 +13,7 @@ import {
 const Banner = ({ value, cover }) => {
   return (
     <View style={styles.banner}>
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "#7b82b6",
-          borderRadius: 15,
-          justifyContent: "center",
-          padding: 10,
-        }}
-      >
+      <View style={styles.bannermessage}>
         <Text
           style={{
             color: "#fff",
@@ -108,7 +100,6 @@ export default HomePage = ({ navigation }) => {
         style={{
           backgroundColor: "#515993",
           flex: 0.5,
-          // marginTop: 10,
         }}
       ></View>
 
@@ -138,11 +129,17 @@ const styles = StyleSheet.create({
   },
   banner: {
     backgroundColor: "#7b82b6",
-    // borderWidth: 1,
     flex: 2,
     flexDirection: "row",
     borderRadius: 15,
     margin: 8,
+  },
+  bannermessage: {
+    flex: 1,
+    backgroundColor: "#7b82b6",
+    borderRadius: 15,
+    justifyContent: "center",
+    padding: 10,
   },
   textheading: {
     color: "#e2ded3",
