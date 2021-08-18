@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-import {
-  SafeAreaView,
-  ScrollView,
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  StatusBar,
-} from "react-native";
+import { SafeAreaView, ScrollView, View, Text, Image } from "react-native";
 import { Checkbox, Divider } from "react-native-paper";
+import styles from "./workoutstylesheet";
+
 const Legworkout = () => {
   const [checked0, setChecked0] = useState(false);
   const [checked1, setChecked1] = useState(false);
@@ -156,7 +150,7 @@ const Legworkout = () => {
             </View>
             <View style={styles.name_container}>
               <Text style={{ color: "#353a60" }}>Wall Sit </Text>
-              <Text>60 s</Text>
+              <Text>60 sec</Text>
             </View>
             <View style={styles.checkbox_container}>
               <Checkbox
@@ -183,44 +177,3 @@ const Legworkout = () => {
 };
 
 export default Legworkout;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: StatusBar.currentHeight,
-    backgroundColor: "#fff",
-  },
-  heading: {
-    fontSize: 35,
-    marginVertical: 10,
-    marginLeft: 15,
-    color: "#515993",
-  },
-  image_container: {
-    flex: 1,
-    backgroundColor: "#d4d7ec",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  name_container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#ececec",
-    borderBottomEndRadius: 10,
-  },
-  checkbox_container: {
-    flex: 0.5,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
-  },
-  description: {
-    textAlign: "justify",
-    fontSize: 10,
-    marginTop: 5,
-    paddingHorizontal: 15,
-    color: "grey",
-    backgroundColor: "#fff",
-  },
-});
